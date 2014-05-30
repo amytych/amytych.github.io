@@ -16,7 +16,7 @@ body{
   line-height: 1.5em;
   background-color: #fafafa;
   color: #222;
-  color: rgba(0,0,0,.2);
+  color: rgba(0,0,0,.4);
   text-align: center;
   -webkit-transition: background-color 3s linear;
   -moz-transition: background-color 3s linear;
@@ -44,14 +44,18 @@ h2 {
   text-transform: uppercase;
 }
 
+p {
+  color: #222;
+  color: rgba(0,0,0,.4);
+  font-size: .8em;
+}
+
 a, a:visited {
   color: #222;
-  color: rgba(0,0,0,.2);
+  color: rgba(0,0,0,.4);
   text-decoration: none;
-  text-transform: uppercase;
-  font-size: .7em;
   border-bottom: 1px dotted #222;
-  border-bottom: 1px dotted rgba(0,0,0,.2);
+  border-bottom: 1px dotted rgba(0,0,0,.4);
   -webkit-transition: all .15s linear;
   -moz-transition: all .15s linear;
   -o-transition: all .15s linear;
@@ -61,4 +65,11 @@ a, a:visited {
 a:hover, a:focus {
   color: #258dfc;
   border-color: #258dfc;
+}
+
+.sep {
+  display: inline-block;
+  margin: 0 5px;
+  position: relative;
+  top: 2px;
 }
