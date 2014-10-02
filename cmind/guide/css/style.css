@@ -40,6 +40,33 @@ section {
   padding: 20px;
 }
 
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.accordion input {
+  display: none;
+}
+
+.accordion label {
+  display: block;
+  cursor: pointer;
+}
+
+.accordion article {
+  height: 0px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.accordion input:checked ~ article {
+  height: auto;
+}
+
+
+/* SECTIONS
+------------------------------------------------------------------------------------------------------------------------*/
 header {
   text-align: center;
   padding: 50px 10px;
@@ -61,33 +88,8 @@ header p img {
   max-width: 50%;
 }
 
-
-.wrapper {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.accordion input {
-  display: none;
-}
-
-.accordion label {
-  display: block;
-  cursor: pointer;
-}
-
-.accordion article {
-  height:0px;
-  overflow:hidden;
-  z-index:10;
-}
-
-.accordion input:checked ~ article {
-  height: auto;
-}
-
 .section2 {
-  background: #333 url('../img/sweden_bg.jpg') no-repeat 50% 0;
+  background: #222 url('../img/sweden_bg.jpg') no-repeat 50% 0;
   color: #fff;
 }
 
@@ -123,9 +125,9 @@ header p img {
   text-align: center;
 }
 
-  .showoff {
-    display: block;
-  }
+.showoff {
+  display: block;
+}
 
 
 /* QUERIES
@@ -209,12 +211,6 @@ header p img {
 
 }
 
-
-/* HI-RES IMAGES
-------------------------------------------------------------------------------------------------------------------------*/
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2) {
-  /* div#logotype-header { background: url(lib/img/komedia-logo@2x.png) no-repeat; -webkit-background-size: auto 75px; -moz-background-size: auto 75px; background-size: auto 75px; } */
-}
 
 /* PRINT
 ------------------------------------------------------------------------------------------------------------------------*/
