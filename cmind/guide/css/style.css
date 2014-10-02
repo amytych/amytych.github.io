@@ -1,0 +1,246 @@
+/* GENERIC
+------------------------------------------------------------------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px/1.5 Helvetica, 'Helvetica Neue', Arial;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+h3, .h3 {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+section {
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 50px 10px;
+  background: url('../img/flag.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+header h1 {
+  line-height: 1;
+}
+
+footer {
+  background: url('../img/showoff.jpg') no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.accordion input {
+  display: none;
+}
+
+.accordion label {
+  display: block;
+  cursor: pointer;
+}
+
+.accordion article {
+  height:0px;
+  overflow:hidden;
+  z-index:10;
+}
+
+.accordion input:checked ~ article {
+  height: auto;
+}
+
+.about-sweden .wrapper > div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-sweden h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.about-sweden label {
+  text-align: center;
+}
+
+  .showoff {
+    display: block;
+  }
+
+
+/* QUERIES
+------------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 150px 20px;
+    font-size: 1.2em;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  .section1 .col:first-child {
+    float: left;
+    width: 60%;
+  }
+
+  .section1 .col:last-child {
+    float: right;
+    width: 35%;
+  }
+
+  .section2 article, .section2 h2 {
+    width: 60%;
+    margin-left: 40%
+  }
+
+  .about-sweden label {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .about-sweden input:checked ~ article {
+    margin-bottom: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 900px) {
+
+  header {
+    padding: 250px 20px;
+    font-size: 1.4em;
+  }
+
+  section {
+    padding: 100px 0;
+  }
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+  header {
+    padding: 200px 20px;
+    font-size: 2em;
+  }
+
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 100px;
+  }
+
+}
+
+
+/* HI-RES IMAGES
+------------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2) {
+  /* div#logotype-header { background: url(lib/img/komedia-logo@2x.png) no-repeat; -webkit-background-size: auto 75px; -moz-background-size: auto 75px; background-size: auto 75px; } */
+}
+
+/* PRINT
+------------------------------------------------------------------------------------------------------------------------*/
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}

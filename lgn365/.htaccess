@@ -1,4 +1,5 @@
+AuthName "Restricted Area"
 AuthType Basic
-AuthName "Password Protected Area"
-AuthUserFile /path/to/.htpasswd
-Require valid-user
+AuthUserFile /usr/home/kaizendev/public_html/.htpasswd
+AuthGroupFile /dev/null
+require valid-user
