@@ -6,16 +6,19 @@
 }
 
 body {
-  font: 14px/1.5 Helvetica, 'Helvetica Neue', Arial;
+  font: 300 14px/1.5 Helvetica, 'Helvetica Neue', Arial;
   color: #222;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
 }
 
 h3, .h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.4em;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 p {
@@ -84,8 +87,8 @@ header h1 img {
   max-width: 80%;
 }
 
-header p img {
-  max-width: 50%;
+header h4 img {
+  max-width: 30%;
 }
 
 .section2 {
@@ -98,6 +101,8 @@ header p img {
   padding: 270px 0 0 200px;
   min-height: 340px;
   background: url('../img/map.png') no-repeat 0 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
 }
 
 .map li {
@@ -115,13 +120,14 @@ header p img {
 }
 
 .about-sweden h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
   font-weight: 300;
 }
 
 .about-sweden label {
+  margin-bottom: 10px;
   text-align: center;
 }
 
