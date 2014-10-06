@@ -139,6 +139,31 @@ header h4 img {
   width: 100%;
 }
 
+.btn, .btn:visited {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: #02c2e5;
+  transition: background-color .15s ease-in;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  background-color: #02d0f6;
+}
+
+.btn small {
+  display: block;
+  font-size: .7em;
+  border-top: 1px solid rgba(255,255,255,.4);
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
 
 /* QUERIES
 ------------------------------------------------------------------------------------------------------------------------*/
@@ -186,6 +211,10 @@ header h4 img {
 
   .about-sweden input:checked ~ article {
     margin-bottom: 30px;
+  }
+
+  .cta {
+    text-align: center;
   }
 
   .map {
