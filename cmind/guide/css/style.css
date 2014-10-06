@@ -109,6 +109,7 @@ header h4 img {
 
 .map li {
   margin-bottom: 20px;
+  white-space: nowrap;
 }
 
 .map img {
