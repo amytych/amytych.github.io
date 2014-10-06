@@ -134,6 +134,10 @@ header h4 img {
   text-align: center;
 }
 
+.cta {
+  text-align: center;
+}
+
 .showoff {
   display: block;
   width: 100%;
@@ -211,10 +215,6 @@ header h4 img {
 
   .about-sweden input:checked ~ article {
     margin-bottom: 30px;
-  }
-
-  .cta {
-    text-align: center;
   }
 
   .map {
