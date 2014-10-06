@@ -160,6 +160,25 @@ header h4 img {
   background-color: #02d0f6;
 }
 
+.btn.icon {
+  position: relative;
+  padding-left: 80px;
+}
+
+.btn.icon:before {
+  content: '\21D3';
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  line-height: 42px;
+  border: 1px solid #FFF;
+  border-radius: 40px;
+}
+
 .btn small {
   display: block;
   font-size: .7em;
