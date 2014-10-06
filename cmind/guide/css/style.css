@@ -100,7 +100,7 @@ header h4 img {
 .map {
   list-style: none;
   padding: 25% 0 0 50%;
-  min-height: 340px;
+  min-height: 260px;
   background: url('../img/map.png') no-repeat 0 0;
   background-size: 50%;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -189,6 +189,7 @@ header h4 img {
   }
 
   .map {
+    min-height: 340px;
     padding: 270px 0 0 200px;
     background-size: auto;
   }
