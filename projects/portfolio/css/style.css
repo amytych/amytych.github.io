@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Layout */
+
+.wrapper {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+
+/* Helper classes */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+} 
+
+
+/* Buttons */
+
+.btn-circle {
+  display: inline-block;
+  border-radius: 100%;
+}
+
+.btn-dark {
+  background-color: ;
+}
+
+.btn-light {
+  background-color: rgba(255,255,255,.8);
+}
+
+.hamburger {
+
+}
+
+
+/* Slides */
+
+.slides {
+  position: relative;
+}
+
+.slides .slides-container {
+  display: none;
+}
+
+.slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+.slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  top: 46%;
+  right: 20px;
+  width: 20px;
+}
+
+/* Header */
+
+header {
+  position: relative;
+  z-index: 5;
+}
+
+/* Main navigation */
+
+nav {
+
+}
+
+
+/* Home page */
+
+.home-page h1 {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 463px;
+  height: 254px;
+  background: url(../img/logo-white.svg) no-repeat 0 0;
+  text-indent: -9999px;
+  opacity: .8;
+}
+
+.home-page .site-navigation {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
