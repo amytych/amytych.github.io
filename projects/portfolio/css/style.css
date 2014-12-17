@@ -342,3 +342,11 @@ footer {
   background-size: contain;
 }
 
+
+
+@media (min-width: 768px) {
+  .home-page h1 {
+    width: 463px;
+    height: 256px;
+  }
+}
