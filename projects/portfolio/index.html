@@ -10,24 +10,24 @@
     <header>
       <h1 class="logo">Robert Öhman</h1>
       <nav class="site-navigation">
-        <a href="#" class="btn-circle hamburger" id="nav-toggler"><span>Toggle Navigation</span></a>
-        <div class="main-nav visually-hidden">
+        <a href="#" class="btn-circle btn-icon btn-light btn-large icon-menu dialog-toggler" data-dialog="main-nav"><span>Toggle Navigation</span></a>
+        <div id="main-nav" class="dialog dialog-dark main-nav visually-hidden">
+          <h5>Innehåll</h5>
           <ul class="site-nav">
-            <li><strong>Innehåll</strong></li>
-            <li><a href="#">+ Interiör</a></li>
-            <li><a href="#">+ Exteriör</a></li>
-            <li><a href="#">+ Formgivning</a></li>
-            <li><a href="#">+ Inspirationsresor</a></li>
-            <li><a href="#">+ Om Robert Öhman</a></li>
+            <li class="plus"><a href="#">Interiör</a></li>
+            <li class="plus"><a href="#">Exteriör</a></li>
+            <li class="plus"><a href="#">Formgivning</a></li>
+            <li class="plus"><a href="#">Inspirationsresor</a></li>
+            <li class="plus"><a href="#">Om Robert Öhman</a></li>
             <li><a href="#">Utmärkelser</a></li>
             <li><a href="#">Referenser</a></li>
             <li><a href="#">Kontakt</a></li>
             <li><a href="#">Nyheter</a></li>
           </ul>
-          <ul class="social-nav">
-            <li><a href="#">fb</a></li>
-            <li><a href="#">in</a></li>
-          </ul>
+          <div class="social-nav">
+            <a href="#" class="btn-circle btn-light btn-small">fb</a>
+            <a href="#" class="btn-circle btn-light btn-small">in</a>
+          </div>
         </div>
       </nav>
     </header>
@@ -35,14 +35,7 @@
       <ul class="slides-container">
         <li>
           <img src="slides/home-banner-01.jpg" alt="">
-          <div class="container">
-<!--             <div class="contrast">
-              <p>
-                Images are smartly centered in the viewport. Use your own media queries to control the layout of your content.
-              </p>
-            </div>
-          </div>
- -->        </li>
+        </li>
         <li>
           <img src="slides/people.jpeg" alt="Cinelli">
         </li>
@@ -58,9 +51,26 @@
       </ul>
 
       <nav class="slides-navigation">
-        <a href="#" class="next btn-circle">Next</a>
-        <a href="#" class="prev btn-circle">Prev</a>
+        <a href="#" class="next btn-circle btn-icon btn-light icon-next"></a>
+        <a href="#" class="prev btn-circle btn-icon btn-light icon-prev"></a>
       </nav>
+
+      <a href="#" class="btn-circle btn-icon btn-light icon-circle slide-tooltip-toggler dialog-toggler" data-dialog="slide-tooltip-0"></a>
+      <p id="slide-tooltip-0" class="dialog dialog-dark slide-tooltip visually-hidden">
+          Text for the first slide. Lorem ipsum dolor sit amet. Text for the first slide. Lorem ipsum dolor sit amet.
+      </p>
+      <p id="slide-tooltip-1" class="dialog dialog-dark slide-tooltip visually-hidden">
+        Text for the second slide. Lorem ipsum dolor sit amet. Text for the second slide. Lorem ipsum dolor sit amet.
+      </p>
+      <p id="slide-tooltip-2" class="dialog dialog-dark slide-tooltip visually-hidden">
+        Text for the third slide. Lorem ipsum dolor sit amet. Text for the third slide. Lorem ipsum dolor sit amet.
+      </p>
+      <p id="slide-tooltip-3" class="dialog dialog-dark slide-tooltip visually-hidden">
+        Text for the fourth slide. Lorem ipsum dolor sit amet. Text for the fourth slide. Lorem ipsum dolor sit amet.
+      </p>
+      <p id="slide-tooltip-4" class="dialog dialog-dark slide-tooltip visually-hidden">
+        Text for the fifth slide. Lorem ipsum dolor sit amet. Text for the fifth slide. Lorem ipsum dolor sit amet.
+      </p>
     </div>
   </div>
 
