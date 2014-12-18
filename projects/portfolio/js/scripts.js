@@ -6,25 +6,27 @@ $(function() {
 
 
   // Initialize intro slides
-  $slides
-    .superslides({
-      inherit_width_from: '.wrapper',
-      pagination: false
-    })
-    .on('animated.slides', function () {
-      // update slide tooltip index
-      $(this).find('.slides-container > li').each(function (index, el) {
-        if ($(el).css('display') === 'block') {
-          $slideTooltipToggler.data('dialog', 'slide-tooltip-' + index);
-          return false;
-        }
+  if ($slides.length) {
+    $slides
+      .superslides({
+        inherit_width_from: '.wrapper',
+        pagination: false
+      })
+      .on('animated.slides', function () {
+        // update slide tooltip index
+        $(this).find('.slides-container > li').each(function (index, el) {
+          if ($(el).css('display') === 'block') {
+            $slideTooltipToggler.data('dialog', 'slide-tooltip-' + index);
+            return false;
+          }
+        });
+      })
+      .on('animating.slides', function () {
+        // Hide the tooltip before animatin the slides
+        $slideTooltipToggler.removeClass('icon-close toggler-active').addClass('icon-circle');
+        $('.slide-tooltip').addClass('visually-hidden').css('opacity', 0);
       });
-    })
-    .on('animating.slides', function () {
-      // Hide the tooltip before animatin the slides
-      $slideTooltipToggler.removeClass('icon-close toggler-active').addClass('icon-circle');
-      $('.slide-tooltip').addClass('visually-hidden').css('opacity', 0);
-    });
+  }
 
 
   // Dialogs (navigation, slide tooltips)
