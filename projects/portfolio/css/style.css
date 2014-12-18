@@ -18,6 +18,15 @@ h2 {
   margin-bottom: .5em;
 }
 
+h2:after {
+  content: ':';
+  margin-left: 5px;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
 a, a:visited {
   color: #8e8a83;
   text-decoration: none;
@@ -26,8 +35,6 @@ a, a:visited {
 blockquote {
   margin: 10px 0;
   text-transform: uppercase;
-  border-top: 1px solid #bdbebd;
-  border-bottom: 1px solid #bdbebd;
 }
 
 blockquote:before {
@@ -42,6 +49,14 @@ blockquote:before {
   border-radius: 100%;
   background-color: #7c776c;
 }
+
+hr {
+  display: block;
+  height: 1px;
+  background-color: #bdbebd;
+  border-width: 0;
+}
+
 
 /* =Layout
 --------------------------------------------------------------------------------------- */
@@ -83,9 +98,53 @@ blockquote:before {
   text-align: right;
 }
 
+.text-light {
+  color: #fff;
+}
+
+.framed {
+  border-top: 1px solid #bdbebd;
+  border-bottom: 1px solid #bdbebd;
+}
+
+
+.form-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 1;
+}
+
+.form-field label:after {
+  content: ':';
+  margin-left: 3px;
+}
+
+.form-field input, .form-field textarea {
+  display: block;
+  width: 100%;
+  padding: 30px 10px 10px 10px;
+  border: none;
+  background-color: #f4f3f2;
+  font: 16px 'Helvetica Neue Light', 'Helvetica Neue', Verdana, sans-serif;
+}
+
+.form-field textarea {
+  min-height: 150px;
+}
+
 
 /* =Buttons
 --------------------------------------------------------------------------------------- */
+
+.btn-large {
+  font-size: 24px;
+}
 
 .btn-circle {
   display: inline-block;
@@ -101,7 +160,7 @@ blockquote:before {
 .btn-circle.btn-large {
   width: 60px;
   height: 60px;
-  line-height: 30px;
+  line-height: 60px;
 }
 
 .btn-icon {
@@ -289,7 +348,7 @@ blockquote:before {
 }
 
 .slide-tooltip {
-  position: ūabsolute;
+  position: absolute;
   top: 240px;
   right: 25px;
   width: 300px;
@@ -327,9 +386,45 @@ figure img {
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  color: #fff;
 }
 
+
+/* =Accordion
+--------------------------------------------------------------------------------------- */
+.accordion dt {
+  font-size: 2em;
+  padding: 10px 0;
+  border-bottom: 1px solid #bdbebd;
+}
+
+.accordion dt a {
+  transition: color .15s ease-in;
+}
+
+.accordion dt a:hover, .accordion dt a:focus,
+.accordion dt.active a, .accordion dt.active a:visited {
+  color: #000;
+}
+
+.accordion dt a:before {
+  content: '+';
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform .15s ease-in;
+}
+
+.accordion dt a:hover:before, .accordion dt a:focus:before {
+  color: #000;
+}
+
+.accordion dt.active a:before {
+  color: #000;
+  transform: rotate(45deg);
+}
+
+.accordion dd {
+  padding: 20px;
+}
 
 /* =Simple grid
 --------------------------------------------------------------------------------------- */
@@ -444,6 +539,7 @@ footer {
 --------------------------------------------------------------------------------------- */
 
 .home-page .wrapper {
+  padding: 0;
   max-width: 100%;
 }
 
@@ -467,25 +563,14 @@ footer {
   top: 20px;
 }
 
-/* White frame around the screen on the frontpage */
-#top, #bottom, #left, #right {
-  background: #fff;
+.home-page footer {
   position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: #fff;
 }
-#left, #right {
-  top: 0; bottom: 0;
-  width: 15px;
-}
-#left { left: 0; }
-#right { right: 0; }
-
-#top, #bottom {
-  left: 0; right: 0;
-  height: 15px;
-}
-#top { top: 0; }
-#bottom { bottom: 0; }
-
 
 /* =Media queries
 --------------------------------------------------------------------------------------- */
@@ -493,7 +578,7 @@ footer {
 @media (min-width: 768px) {
 
   blockquote {
-    margin: 20px 0;
+    margin: 20px 0 0;
   }
 
   blockquote:before {
@@ -501,7 +586,15 @@ footer {
   }
 
   .wrapper {
+    padding: 0 20px;
+  }
+
+  section {
     padding: 20px 0;
+  }
+
+  section > h2 {
+    margin-top: 0;
   }
 
   /* =Simple grid
@@ -509,12 +602,15 @@ footer {
   .grid {
     margin-left: -20px;
     margin-right: -20px;
-    padding: 20px 0;
   }
 
   [class*='grid-'] {
     float: left;
-    padding: 20px;
+    padding: 0 20px;
+  }
+
+  .grid-padded {
+    padding: 20px 0;
   }
 
   .grid-2-3 {
@@ -535,15 +631,65 @@ footer {
             column-gap: 40px;
   }
 
+  header {
+    margin: 40px 0;
+  }
+
   header h1 {
     width: 318px;
     height: 175px;
   }
 
   .home-page h1 {
+    top: 70px;
+    left: 70px;
     width: 463px;
     height: 256px;
   }
+
+  .home-page .site-navigation {
+    right: 70px;
+    top: 70px;
+  }
+  
+  .home-page .site-navigation .dialog {
+    width: 400px;
+  }
+
+  .slides-navigation {
+    top: 170px;
+    right: 85px;
+  }
+
+  .slide-tooltip-toggler {
+    top: 280px;
+    right: 85px;
+  }
+
+  .slide-tooltip {
+    top: 270px;
+    right: 75px;
+    width: 400px;
+  }
+
+  /* White frame around the screen on the frontpage */
+  #top, #left, #right {
+    position: fixed;
+    background: #fff;
+    z-index: 2;
+  }
+  #left, #right {
+    top: 0; bottom: 0;
+    width: 40px;
+  }
+  #left { left: 0; }
+  #right { right: 0; }
+
+  #top {
+    left: 0; right: 0;
+    height: 40px;
+  }
+  #top { top: 0; }
 
 }
 
@@ -555,7 +701,7 @@ footer {
   }
 
   blockquote {
-    margin: 80px 0;
+    margin: 80px 0 0;
     font-size: 2em;
   }
 
@@ -564,22 +710,28 @@ footer {
   }
 
   header {
-    margin: 80px 0;
+    margin: 80px 0 0;
   }
 
   .wrapper {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
+  }
+
+  section {
+    padding: 80px 0;
   }
 
   .grid {
     margin-left: -40px;
     margin-right: -40px;
-    padding: 40px 0;
   }
 
   [class*='grid-'] {
-    padding: 40px;
+    padding: 0 40px;
+  }
+
+  .grid-padded {
+    padding: 40px 0;
   }
 
   /* css columns */
@@ -587,6 +739,18 @@ footer {
     -webkit-column-gap: 80px;
        -moz-column-gap: 80px;
             column-gap: 80px;
+  }
+
+  .contact-social {
+    padding: 20px 0;
+  }
+
+  .contact-social h2 {
+    margin: 0;
+  }
+
+  .accordion dd {
+    padding: 40px;
   }
 
 

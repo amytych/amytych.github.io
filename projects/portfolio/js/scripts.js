@@ -2,7 +2,30 @@ $(function() {
   'use strict';
 
   var $slides = $('#slides'),
-    $slideTooltipToggler = $('.slide-tooltip-toggler');
+    $slideTooltipToggler = $('.slide-tooltip-toggler'),
+    $accordionTogglers = $('.accordion > dt'),
+    $accordionPanels = $('.accordion > dd').hide();
+
+
+  // Simple accordion
+  if ($accordionPanels.length) {
+    $('.accordion > dt > a').on('click', function (event) {
+        var $this = $(this),
+          $target =  $this.parent().next();
+
+        if (!$target.hasClass('active')) {
+          $accordionTogglers.removeClass('active');
+          $this.parent().addClass('active');
+          $accordionPanels.removeClass('active').slideUp(150);
+          $target.addClass('active').slideDown(150);
+        } else {
+          $this.parent().removeClass('active');  
+          $accordionPanels.removeClass('active').slideUp(150);
+        }
+        
+      event.preventDefault();
+    });
+  }
 
 
   // Initialize intro slides
