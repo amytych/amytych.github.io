@@ -15,6 +15,7 @@ body {
 
 h2 {
   text-transform: uppercase;
+  margin-bottom: .5em;
 }
 
 a, a:visited {
@@ -49,7 +50,7 @@ blockquote:before {
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
 }
 
 
@@ -333,7 +334,7 @@ figure img {
 /* =Simple grid
 --------------------------------------------------------------------------------------- */
 [class*='grid-'] {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 
@@ -342,12 +343,14 @@ figure img {
 
 header {
   position: relative;
+  margin: 20px 0;
   z-index: 6;
 }
 
+
 header h1 {
-  width: 80px;
-  height: 44px;
+  width: 120px;
+  height: 66px;
   background: url(../img/logo-brown.svg) no-repeat 0 0;
   background-size: contain;
   text-indent: -9999px;
@@ -444,6 +447,9 @@ footer {
   max-width: 100%;
 }
 
+.home-page header {
+  margin: 0;
+}
 .home-page h1 {
   position: absolute;
   left: 20px;
@@ -495,8 +501,7 @@ footer {
   }
 
   .wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px 0;
   }
 
   /* =Simple grid
@@ -528,14 +533,6 @@ footer {
     -webkit-column-gap: 40px;
        -moz-column-gap: 40px;
             column-gap: 40px;
-  }
-
-  header {
-    margin: 20px 0;
-  }
-
-  .home-page header {
-    margin: 0;
   }
 
   header h1 {
