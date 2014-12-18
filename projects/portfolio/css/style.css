@@ -563,15 +563,6 @@ footer {
   top: 20px;
 }
 
-.home-page footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  background: #fff;
-}
-
 /* =Media queries
 --------------------------------------------------------------------------------------- */
 
@@ -670,6 +661,15 @@ footer {
     top: 270px;
     right: 75px;
     width: 400px;
+  }
+
+  .home-page footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: #fff;
   }
 
   /* White frame around the screen on the frontpage */
