@@ -36,20 +36,22 @@ $(function() {
         pagination: false
       })
       .on('animated.slides', function () {
-        var desiredLength = +$slides.data('length'),
-          actualLength = $slides.find('img').length,
-          current = $slides.superslides('current'),
-          url, $img;
+        // var desiredLength = +$slides.data('length'),
+        //   actualLength = $slides.find('img').length,
+        //   current = $slides.superslides('current'),
+        //   url, $img;
         
-        // If it's the last slide and we don't have all images on the page
-        if (actualLength - 1 === current && actualLength < desiredLength) {
-          url = 'slides/slide-' + (current + 1) + '.jpg';
-          $img = $('<img>', {'src': url, 'alt': ''});
-          $img.on('load', function () {
-            $slides.superslides('update');
-          })
-          $slides.find('.slides-container').append($img);
-        }
+        // // If it's the last slide and we don't have all images on the page
+        // if (actualLength - 1 === current && actualLength < desiredLength) {
+        //   url = 'slides/slide-' + (current + 1) + '.jpg';
+        //   $img = $('<img>', {'src': url, 'alt': ''});
+        //   $img.on('load', function () {
+        //     $slides.superslides('update');
+        //   })
+        //   $slides.find('.slides-container').append($img);
+        // }
+
+        var current = $slides.superslides('current');
 
         // update slide tooltip index
         $slideTooltipToggler.data('dialog', 'slide-tooltip-' + current);
