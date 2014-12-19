@@ -107,6 +107,22 @@ hr {
   border-bottom: 1px solid #bdbebd;
 }
 
+.block-link {
+  display: block;
+  font-size: 2em;
+  padding: 10px 0;
+  border-bottom: 1px solid #bdbebd;  
+}
+
+.block-link:before {
+  content: '+';
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+/* =Form fields
+--------------------------------------------------------------------------------------- */
 
 .form-field {
   position: relative;
@@ -392,9 +408,6 @@ figure img {
 /* =Accordion
 --------------------------------------------------------------------------------------- */
 .accordion dt {
-  font-size: 2em;
-  padding: 10px 0;
-  border-bottom: 1px solid #bdbebd;
 }
 
 .accordion dt a {
@@ -407,9 +420,6 @@ figure img {
 }
 
 .accordion dt a:before {
-  content: '+';
-  display: inline-block;
-  margin-right: 10px;
   transition: transform .15s ease-in;
 }
 
@@ -563,6 +573,22 @@ footer {
   top: 20px;
 }
 
+
+/* =News page
+--------------------------------------------------------------------------------------- */
+.news-page section {
+  border-bottom: 1px solid #bdbebd;
+}
+
+.news-summary h3 {
+  margin: 10px 0;
+}
+
+.news-summary .date {
+  text-transform: uppercase;
+}
+
+
 /* =Media queries
 --------------------------------------------------------------------------------------- */
 
@@ -691,6 +717,14 @@ footer {
   }
   #top { top: 0; }
 
+
+  /* =News page
+  --------------------------------------------------------------------------------------- */
+  .news-summary h3 {
+    font-size: 1.5em;
+    margin: 20px 0;
+  }
+
 }
 
 @media (min-width: 960px) {
@@ -753,5 +787,11 @@ footer {
     padding: 40px;
   }
 
+
+  /* =News page
+  --------------------------------------------------------------------------------------- */
+  .news-summary h3 {
+    font-size: 2em;
+  }
 
 }
