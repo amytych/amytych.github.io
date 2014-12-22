@@ -4,7 +4,59 @@ $(function() {
   var $slides = $('#slides'),
     $slideTooltipToggler = $('.slide-tooltip-toggler'),
     $accordionTogglers = $('.accordion > dt'),
-    $accordionPanels = $('.accordion > dd').hide();
+    $accordionPanels = $('.accordion > dd').hide(),
+    $popupGallery = $('.popup-gallery');
+
+
+  // Lighbox/popup gallery
+  if ($popupGallery.length) {
+    $('.popup-gallery').each(function () {
+      $(this).magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        closeOnBgClick: false,
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+        },
+        callbacks: {
+          open: function () {
+            this.logo = $('<span/>', {'class': 'mfp-logo'}).appendTo(this.container);
+            this.slideTooltipToggler = $('<a/>', {
+              'href': '#',
+              'class': 'btn-circle btn-icon btn-light icon-circle slide-tooltip-toggler dialog-toggler',
+              'data-dialog': this.ev[0].id + '-slide-tooltip-' + this.index
+            }).appendTo($('body'));
+            this.frames = $('<div id="left"/><div id="right"/><div id="top"/><div id="bottom"/>').appendTo($('body'));
+
+            this.arrowLeft.addClass('btn-circle btn-light btn-icon icon-prev');
+            this.arrowRight.addClass('btn-circle btn-light btn-icon icon-next');
+            this.currTemplate.closeBtn.addClass('btn-circle btn-large btn-light btn-icon icon-close').text('');
+          },
+          close: function () {
+            this.slideTooltipToggler.remove();
+            this.frames.remove();
+          },
+          change: function () {
+            if (this.slideTooltipToggler) {
+              // update slide tooltip index
+              this.slideTooltipToggler.data('dialog', this.ev[0].id + '-slide-tooltip-' + this.index);
+
+              // Hide visible tooltip
+              this.slideTooltipToggler.removeClass('icon-close toggler-active').addClass('icon-circle');
+              $('.slide-tooltip').addClass('visually-hidden').css('opacity', 0);
+            }
+          }
+        }
+      });
+    });
+  }
 
 
   // Simple accordion
@@ -65,7 +117,7 @@ $(function() {
 
 
   // Dialogs (navigation, slide tooltips)
-  $('.dialog-toggler').on('click', function (event) {
+  $('body').on('click', '.dialog-toggler', function (event) {
     var $toggler = $(this),
       dialogId = $toggler.data('dialog'),
       $dialog = $('#' + dialogId);
@@ -86,7 +138,7 @@ $(function() {
 
 
   // Update slide tooltip toggler class
-  $slideTooltipToggler.on('click', function (event) {
+  $('body').on('click', '.slide-tooltip-toggler', function (event) {
     var $toggler = $(this);
 
     if ($toggler.hasClass('toggler-active')) {

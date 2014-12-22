@@ -170,6 +170,9 @@ hr {
   line-height: 30px;
   text-decoration: none;
   text-align: center;
+  border-width: 0;
+  cursor: pointer;
+  outline: 0;
   transition: background-color .15s ease-in;
 }
 
@@ -180,6 +183,7 @@ hr {
 }
 
 .btn-icon {
+  position: relative;
   text-indent: -9999px;
 }
 
@@ -220,10 +224,11 @@ hr {
 
 .icon-prev:before, .icon-next:before {
   content: '';
+  position: absolute;
+  top: 8px;
   display: block;
   width: 0;
   height: 0;
-  margin-top: 8px;
   border-style: solid;
 }
 
@@ -256,6 +261,12 @@ hr {
   font-weight: 700;
   font-size: 18px;
   text-align: center;
+}
+
+.btn-large.icon-close:after {
+  position: relative;
+  top: -4px;
+  font-size: 52px;
 }
 
 
@@ -344,31 +355,47 @@ hr {
   clear: both;
 }
 
-.slides-navigation {
-  margin: 0 auto;
+.slides-navigation a, .mfp-arrow {
   position: absolute;
-  z-index: 3;
-  top: 140px;
   right: 35px;
-  width: 30px;
+  z-index: 1050;
 }
 
-.slides-navigation a {
-  margin-bottom: 20px;
+.slides-navigation .next, .mfp-arrow-right {
+  top: 140px;
+}
+
+.slides-navigation .prev, .mfp-arrow-left {
+  top: 195px;
 }
 
 .slide-tooltip-toggler {
-  position: absolute;
+  position: fixed;
   top: 250px;
   right: 35px;
+  z-index: 1053;
 }
 
 .slide-tooltip {
-  position: absolute;
+  position: fixed;
   top: 240px;
   right: 25px;
   width: 300px;
   padding: 30px 50px 30px 30px;
+  z-index: 1052;
+}
+
+.slide-tooltip h3 {
+  text-transform: uppercase;
+}
+
+.slide-tooltip h3:after {
+  content: ':';
+  margin-left: 3px;
+}
+
+.slide-tooltip h4 {
+  margin: 10px 0;
 }
 
 
@@ -644,7 +671,7 @@ footer {
        -moz-columns: 3;
             columns: 3;
     -webkit-column-gap: 40px;
-       -moz-column-gap: 40px;
+       -moz-column-gap: 40px;§
             column-gap: 40px;
   }
 
@@ -673,10 +700,15 @@ footer {
     width: 400px;
   }
 
-  .slides-navigation {
-    top: 170px;
+  .slides-navigation a, .mfp-arrow {
     right: 85px;
   }
+
+  .slides-navigation .next, .mfp-arrow-left {
+    top: 225px; }
+
+  .slides-navigation .prev, .mfp-arrow-right {
+    top: 170px; }
 
   .slide-tooltip-toggler {
     top: 280px;
@@ -699,10 +731,10 @@ footer {
   }
 
   /* White frame around the screen on the frontpage */
-  #top, #left, #right {
+  #top, #bottom, #left, #right {
     position: fixed;
     background: #fff;
-    z-index: 2;
+    z-index: 1052;
   }
   #left, #right {
     top: 0; bottom: 0;
@@ -711,11 +743,12 @@ footer {
   #left { left: 0; }
   #right { right: 0; }
 
-  #top {
+  #top, #bottom {
     left: 0; right: 0;
     height: 40px;
   }
   #top { top: 0; }
+  #bottom { bottom: 0; }
 
 
   /* =News page
